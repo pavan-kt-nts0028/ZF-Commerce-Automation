@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title> ZF Commerce Automation </title>
+</head>
+<body>
+  <div id="backdrop" class="d-none" style="width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.256); position: fixed; top: 0; left: 0; z-index: 5;"></div>
+  <div class="d-flex justify-content-evenly align-items-center" style="height: 100vh;">
+    <div class="w-40 border p-5 rounded-3">
+      <h1> Commerce Product Migration </h1>
+      <form>
+        <label class="form-label mt-4" for="source-org"> Source Org ID </label>
+        <input class="form-control" type="text" name="source-org" id="source-org" required/>
+        <label class="form-label mt-4" for="dest-org"> Destination Org ID </label>
+        <input class="form-control" type="text" name="dest-org" id="dest-org" required/>
+        <button id="transfer" class="ms-auto btn btn-primary mt-4" type="submit"> Transfer </button>
+      </form>
+    </div>
+    <div class="w-40 border p-5 rounded-3 position-relative">
+      <h1> Authentication Configs </h1>
+      <form>
+        <label class="form-label mt-4" for="client-id"> Client ID </label>
+        <input class="form-control" type="password" name="client-id" id="client-id" required/>
+        <label class="form-label mt-4" for="client-secret"> Client Secret </label>
+        <input class="form-control" type="password" name="client-secret" id="client-secret" required/>
+        <button id="generate-token" class="btn btn-primary mt-4" type="submit"> Generate Token </button>
+      </form>
+      <button id="more-btn" class="m-3 px-2 py-0 btn border border-secondary rounded-circle position-absolute top-0 end-0"> ! </button>
+      <div id="more-options" class="d-none flex-column position-absolute top-0 end-0 m-3 border p-2 rounded-3 bg-light">
+        <button id="edit-btn" class="btn btn-primary py-1 px-3"> Edit </button>
+        <a class="btn btn-primary py-1 px-3 mt-2" href="https://www.zoho.com/commerce/api/oauth-step-1.html" target="_blank"> Help </a>
+      </div>
+    </div>
+    <div id="grant-token-modal" class="d-none border p-3 rounded-3 position-fixed bg-light" style="z-index: 10;">
+      <form>
+        <label for="grant-token" class="form-label"> Grant Token </label>
+        <input type="password" id="grant-token" class="form-control" required>
+        <button id="grant-token-btn" type="submit" class="btn btn-primary mt-3"> Submit </button>
+      </form>
+    </div>
+  </div>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
